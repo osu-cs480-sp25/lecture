@@ -25,3 +25,5 @@ Since our parser  specification’s user code section contains a main() function
 g++ parser.c scanner.c -o parser
 
 We could run our parser on the example input file source.py that contains python assignment statements.
+
+./parser < source.py
