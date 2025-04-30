@@ -1,6 +1,5 @@
 %{
 #include <iostream>
-#include <string>
 #include <set>
 void yyerror(const char* s);
 int yylex(void);
