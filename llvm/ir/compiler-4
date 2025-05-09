@@ -1,0 +1,10 @@
+; ModuleID = 'lecture.code.4'
+source_filename = "lecture.code.4"
+
+define float @arith_fn() {
+arith_fn_entry:
+  %a = alloca float, align 4
+  store float 4.000000e+00, ptr %a, align 4
+  ret float 4.000000e+00
+}
+

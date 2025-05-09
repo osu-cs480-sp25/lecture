@@ -1,0 +1,8 @@
+; ModuleID = 'lecture.code.1'
+source_filename = "lecture.code.1"
+
+define void @void_fn() {
+void_fn_entry:
+  ret void
+}
+

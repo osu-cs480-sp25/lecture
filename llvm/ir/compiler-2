@@ -1,0 +1,8 @@
+; ModuleID = 'lecture.code.2'
+source_filename = "lecture.code.2"
+
+define float @arith_fn() {
+arith_fn_entry:
+  ret float 6.000000e+00
+}
+
