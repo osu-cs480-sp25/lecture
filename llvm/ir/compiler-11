@@ -2,34 +2,28 @@
 source_filename = "lecture.code.11"
 
 define float @arith_fn() {
-arith_fn_entry:
+block:
   %z = alloca float, align 4
   %y = alloca float, align 4
   %x = alloca float, align 4
   store float 3.000000e+00, ptr %x, align 4
-  store float 5.000000e+00, ptr %y, align 4
   %x1 = load float, ptr %x, align 4
-  %less_than = fcmp ult float %x1, 8.000000e+00
-  %cast_result = uitofp i1 %less_than to float
-  %cond_results = fcmp one float %cast_result, 0.000000e+00
-  br i1 %cond_results, label %if.then, label %if.else
-
-if.then:                                          ; preds = %arith_fn_entry
+  store float 5.000000e+00, ptr %y, align 4
   %y2 = load float, ptr %y, align 4
-  %x3 = load float, ptr %x, align 4
-  %product = fmul float %x3, %y2
+  %less_than = fcmp ult float %x1, 8.000000e+00
+  br i1 %less_than, label %if.then, label %if.else
+
+if.then:                                          ; preds = %block
+  %product = fmul float %x1, %y2
   store float %product, ptr %z, align 4
   br label %if.continue
 
-if.else:                                          ; preds = %arith_fn_entry
-  %y4 = load float, ptr %y, align 4
-  %x5 = load float, ptr %x, align 4
-  %sum = fadd float %x5, %y4
+if.else:                                          ; preds = %block
+  %sum = fadd float %x1, %y2
   store float %sum, ptr %z, align 4
   br label %if.continue
 
 if.continue:                                      ; preds = %if.else, %if.then
-  %z6 = load float, ptr %z, align 4
-  ret float %z6
+  %z3 = load float, ptr %z, align 4
+  ret float %z3
 }
-
